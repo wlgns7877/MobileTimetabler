@@ -5,10 +5,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.List;
 
 import timetable4580236.vu.edu.au.mobiletimetabler.model.Appointment;
+
 
 public class AppointmentDataSource {
 
@@ -35,6 +37,16 @@ public class AppointmentDataSource {
     //insertAppointment method only does adding exist appointment object to database.(Receiving data from user and add it to appointment class will happen in 'NewAppointmentActivity'.
     public static void insertAppointment(Appointment appointment){
 
+        Log.i("Thisone", "came to insertAppointment method");
+        String insert;
+        insert = "INSERT INTO " + MySQLiteHelper.TABLE_APPOINTMENTS + " (day, time, duration, description) VALUES (" + appointment.getDay() +
+                ", " + appointment.getTime() + ", " + appointment.getDuration() + ", " + appointment.getDescription() + ");";
+        Log.i("Thisone", "query message saved into String variable");
+//below line is a problem
+        mDatabase.execSQL(insert);
+
+
+        /*
         ContentValues values = new ContentValues(5);
 
         values.put(MySQLiteHelper.COLUMN_DAY, appointment.getDay());
@@ -44,7 +56,7 @@ public class AppointmentDataSource {
 
         mDatabase.insert(MySQLiteHelper.TABLE_APPOINTMENTS, null, values);
 
-
+*/
 
 
     }

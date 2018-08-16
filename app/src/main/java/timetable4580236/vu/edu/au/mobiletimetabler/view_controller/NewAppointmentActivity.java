@@ -45,10 +45,11 @@ public class NewAppointmentActivity extends AppCompatActivity {
         appointment.setDescription(descText.getText().toString());
 
         // put appointment class to SQLiteDatabase.
+
+        Log.i("Thisone", "user data saved into appointment class");
         AppointmentDataSource.insertAppointment(appointment);
 
         //Toast the result.
-
 
     }
 
