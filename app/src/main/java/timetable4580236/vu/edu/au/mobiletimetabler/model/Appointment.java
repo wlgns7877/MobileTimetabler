@@ -9,8 +9,6 @@ public class Appointment {
     private static String duration;
     private static String description;
 
- //   public Appointment(){}
-
     public long getId(){
         return this.id;
     }

@@ -13,7 +13,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="16dp"
         android:onClick="createAppointment"
-        android:text="Create appointmenr"
+        android:text="Create appointment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,38 +57,43 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radioMon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="1"
             android:text="Mon" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioTue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="2"
             android:text="Tue" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/radioWed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="3"
             android:text="Wed" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioThur"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="4"
             android:text="Thur" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioFri"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="5"
             android:text="Fri" />
     </RadioGroup>
 

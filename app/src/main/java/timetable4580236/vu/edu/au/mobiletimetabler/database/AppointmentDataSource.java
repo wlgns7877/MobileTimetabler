@@ -13,8 +13,8 @@ import timetable4580236.vu.edu.au.mobiletimetabler.model.Appointment;
 public class AppointmentDataSource {
 
  //   private Context mContext;
-    private SQLiteDatabase mDatabase;
-    MySQLiteHelper mDbHelper;
+    static private SQLiteDatabase mDatabase;
+    static MySQLiteHelper mDbHelper;
     public static final String[] ALL_COLUMNS =
             {MySQLiteHelper.COLUMN_DAY,MySQLiteHelper.COLUMN_TIME,MySQLiteHelper.COLUMN_DESCRIPTION,MySQLiteHelper.COLUMN_DURATION,};
 
@@ -24,7 +24,7 @@ public class AppointmentDataSource {
         mDatabase = mDbHelper.getWritableDatabase();
     }
 
-    public void open(){
+    public static void open(){
         mDatabase = mDbHelper.getWritableDatabase();
     }
 
@@ -32,7 +32,8 @@ public class AppointmentDataSource {
         mDbHelper.close();
     }
 
-    public void insertAppointment(Appointment appointment){
+    //insertAppointment method only does adding exist appointment object to database.(Receiving data from user and add it to appointment class will happen in 'NewAppointmentActivity'.
+    public static void insertAppointment(Appointment appointment){
 
         ContentValues values = new ContentValues(5);
 
